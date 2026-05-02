@@ -4,9 +4,15 @@ const nextConfig: NextConfig = {
     reactStrictMode: false,    // ← turn off Strict Mode in dev builds
 
   images: {
-    domains: [
-      "res.cloudinary.com",
-      "lh3.googleusercontent.com", // ✅ Add this line
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
     ],
   },
 };
