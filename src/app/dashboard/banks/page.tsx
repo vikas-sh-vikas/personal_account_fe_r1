@@ -59,20 +59,6 @@ const BankPage = () => {
   const [formType, setFormType] = useState("");
   const { onShowModal, onCloseModal } = useModal();
 
-  useEffect(() => {
-    getBankList();
-    getBankandCashAmount();
-  }, []);
-
-  const onRefreshList = async (button: string) => {
-    if (button == "save") {
-      getBankList();
-      getBankandCashAmount();
-    }
-    setIsFormOpen(false);
-    setEditingIndex(null);
-  };
-
   const getBankList = async () => {
     try {
       setIsLoading(true);
@@ -95,7 +81,6 @@ const BankPage = () => {
       setIsLoading(false);
     }
   };
-
   const getBankandCashAmount = async () => {
     try {
       setIsLoading(true);
@@ -112,6 +97,23 @@ const BankPage = () => {
       setIsLoading(false);
     }
   };
+
+
+  useEffect(() => {
+    getBankList();
+    getBankandCashAmount();
+  }, []);
+
+  const onRefreshList = async (button: string) => {
+    if (button == "save") {
+      getBankList();
+      getBankandCashAmount();
+    }
+    setIsFormOpen(false);
+    setEditingIndex(null);
+  };
+
+
 
   const onDelete = (id: string) => {
     onShowModal({

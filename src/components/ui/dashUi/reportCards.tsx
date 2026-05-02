@@ -56,7 +56,7 @@ const ReportTransactionCard = ({
 
       {data.description && (
         <div className="bg-muted/30 p-3 rounded-xl mb-4 text-xs text-muted-foreground italic">
-          "{data.description}"
+          &quot;{data.description}&quot;
         </div>
       )}
 

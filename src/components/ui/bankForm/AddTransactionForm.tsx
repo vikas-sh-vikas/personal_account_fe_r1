@@ -38,7 +38,7 @@ export default function AddTransactionForm({ onSuccess, onCancel }: AddTransacti
   const [isLoading, setIsLoading] = useState(false);
   const [toggleType, setToggleType] = useState("credit");
   const [transactionType, setTransactionType] = useState<string>("cash");
-  
+
   const [bankOptions, setBankOptions] = useState<any[]>([]);
   const [categoryOptions, setCategoryOptions] = useState<any[]>([]);
   const [transactionTypeOptions, setTransactionTypeOptions] = useState<any[]>([]);
@@ -76,7 +76,7 @@ export default function AddTransactionForm({ onSuccess, onCancel }: AddTransacti
           const { banks, categories, transactionTypes, paymentTypes } = data;
           setBankOptions(banks.map((b: any) => ({ value: b._id, label: b.bank_name })));
           setCategoryOptions(categories.map((c: any) => ({ value: c._id, label: c.name })));
-          
+
           const tOptions = transactionTypes.map((t: any) => ({ value: t._id, label: t.name }));
           setTransactionTypeOptions(tOptions);
           if (tOptions.length > 0) {
@@ -133,14 +133,14 @@ export default function AddTransactionForm({ onSuccess, onCancel }: AddTransacti
   return (
     <div className="relative">
       {onCancel && (
-        <button 
+        <button
           onClick={onCancel}
           className="absolute -top-2 -right-2 p-2 text-muted-foreground hover:text-foreground z-10"
         >
           <X size={20} />
         </button>
       )}
-      
+
       <div className="flex items-center gap-3 mb-8">
         <div className="p-3 bg-primary/10 rounded-2xl text-primary">
           <PlusCircle size={24} />
@@ -179,7 +179,6 @@ export default function AddTransactionForm({ onSuccess, onCancel }: AddTransacti
           </div>
           <FormInput
             label="Amount"
-            error={errors.amount?.message}
             name="amount"
             register={register}
             length={"full"}
@@ -195,7 +194,7 @@ export default function AddTransactionForm({ onSuccess, onCancel }: AddTransacti
             value={formValues.category}
             isRequired={true}
             options={categoryOptions}
-            error={errors.category?.message}
+            // error={errors.category?.message}
             onChange={(selected: any) => setValue("category", selected.value)}
             className="!p-0 font-medium"
           />

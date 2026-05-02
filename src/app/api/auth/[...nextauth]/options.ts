@@ -4,11 +4,11 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 
-const google_client_Id = process.env.GOOGLE_CLIENT_ID;
-const google_client_Secret = process.env.GOOGLE_CLIENT_SECRET;
+const google_client_Id = process.env.GOOGLE_CLIENT_ID || "";
+const google_client_Secret = process.env.GOOGLE_CLIENT_SECRET || "";
 
 if (!google_client_Id || !google_client_Secret) {
-  throw new Error("Google Client ID & secret are required");
+  console.warn("Warning: GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET is missing. Google Auth will not work until these are configured.");
 }
 
 export const authOptions: NextAuthOptions = {
