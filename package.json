@@ -26,7 +26,7 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.503.0",
     "next": "16.2.4",
-    "next-auth": "^4.24.11",
+    "next-auth": "beta",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
     "react-cookies": "^0.1.1",
