@@ -1,0 +1,119 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContainer {
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Use fixed position to make it a modal */
+  top: 48.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 0.3s; /* Adjust animation duration */
+  animation-timing-function: ease-out; /* Add timing function for smoother animation */
+  animation-name: popup;
+  display: block;
+  max-height: 100%
+}
+.modalContainer1 {
+  background-color:transparent;
+  /* box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); */
+  position: fixed; /* Use fixed position to make it a modal */
+  top: 48.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 0.3s; /* Adjust animation duration */
+  animation-timing-function: ease-out; /* Add timing function for smoother animation */
+  animation-name: popup;
+  display: block;
+  max-height: 100%
+}
+.modalContainer1.tab {
+  width: 82% !important;
+  height: 90vh;
+  /* min-height: 80%; */
+}
+.modalContainer.small {
+  min-width: 40%;
+  /* min-height: 30%; */
+}
+.modalContainer.confirmation{
+  min-width: 25%;
+}
+.modalContainer.phone {
+  width: 25%;
+  /* overflow-y: auto; */
+  /* height: 65%; */
+}
+.customPhoneModal .modalContainer.phone {
+  width: 50% !important;
+  height: 80% !important; 
+}
+.modalContainer.changePassword {
+  width: 25%;
+  overflow-y: auto;
+  height: 53%;
+}
+.modalContainer.imageUpload {
+  width: 55%;
+  overflow-y: auto;
+  height: 80%;
+}
+
+
+.modalContainer.medium {
+  min-width: 80%;
+  height: 91%;
+}
+
+.modalContainer1.large {
+  width: 28%;
+  height: 90vh;
+  /* overflow-y: scroll; */
+}
+
+.modalContainer.extraLarge {
+  min-width: 80%;
+  /* min-height: 80%; */
+}
+
+
+
+/* Define a common animation for all sizes */
+@keyframes popup {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.modalTitle {
+  /* padding-bottom: 8px; */
+  border-bottom: 1px solid gray;
+}
+.modalTitle span, .modalTitle svg{
+  font-weight: 600;
+  color: var(--bs-primary);
+}
+.modalFooter {
+  /* padding-bottom: 8px; */
+  border-top: 1px solid gray;
+}
+
+.closeButton {
+  padding: 0.4rem !important;
+}
+

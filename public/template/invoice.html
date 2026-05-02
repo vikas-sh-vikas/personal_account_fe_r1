@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media print {
+        body {
+          margin: 0;
+        }
+        .invoice-box {
+          box-shadow: none;
+          border: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-10">
+    <div
+      class="invoice-box bg-white shadow-lg p-10 rounded-lg max-w-5xl mx-auto border border-gray-300"
+    >
+      <div class="flex justify-between items-center mb-6 border-b pb-4">
+        <div>
+          <h1 class="text-3xl font-bold">Company's Name</h1>
+          <p class="text-gray-600">Address | Contact Details</p>
+        </div>
+        <div class="text-right">
+          <h2 class="text-2xl font-bold">Invoice</h2>
+          <p class="text-gray-600">Invoice No: 02</p>
+          <p class="text-gray-600">Date: 2025-02-04</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <div>
+          <h3 class="text-lg font-semibold">Bill To:</h3>
+          <p class="text-gray-700">Vashunandan Metals</p>
+          <p class="text-gray-600">GSTIN/UIN: XXXX</p>
+          <p class="text-gray-600">State: XYZ | Pin Code: 123456</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Ship To:</h3>
+          <p class="text-gray-700">Vashunandan Metals</p>
+          <p class="text-gray-600">GSTIN/UIN: XXXX</p>
+          <p class="text-gray-600">State: XYZ | Pin Code: 123456</p>
+        </div>
+      </div>
+
+      <table class="w-full border-collapse border border-gray-300 mb-6">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2">Sl. No.</th>
+            <th class="border border-gray-300 px-4 py-2">
+              Description of Goods
+            </th>
+            <th class="border border-gray-300 px-4 py-2">HSN/SAC</th>
+            <th class="border border-gray-300 px-4 py-2">Quantity</th>
+            <th class="border border-gray-300 px-4 py-2">Unit</th>
+            <th class="border border-gray-300 px-4 py-2">Rate</th>
+            <th class="border border-gray-300 px-4 py-2">Discount</th>
+            <th class="border border-gray-300 px-4 py-2">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-gray-700">
+            <td class="border border-gray-300 px-4 py-2">1</td>
+            <td class="border border-gray-300 px-4 py-2">MS Plate</td>
+            <td class="border border-gray-300 px-4 py-2">56561</td>
+            <td class="border border-gray-300 px-4 py-2">1</td>
+            <td class="border border-gray-300 px-4 py-2">Nos.</td>
+            <td class="border border-gray-300 px-4 py-2">100</td>
+            <td class="border border-gray-300 px-4 py-2">10</td>
+            <td class="border border-gray-300 px-4 py-2">90</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grid grid-cols-2 gap-6 border-t border-gray-300 pt-4">
+        <div>
+          <h3 class="text-lg font-semibold">Tax Details:</h3>
+          <p class="text-gray-700">CGST: 9% | SGST: 9%</p>
+          <p class="text-gray-700">Total GST: 18%</p>
+        </div>
+        <div>
+          <div class="flex justify-between text-lg font-semibold">
+            <p>Subtotal:</p>
+            <p>90</p>
+          </div>
+          <div class="flex justify-between text-lg font-semibold">
+            <p>Labour Charges:</p>
+            <p>100</p>
+          </div>
+          <div class="flex justify-between text-lg font-semibold">
+            <p>Freight Charges:</p>
+            <p>200</p>
+          </div>
+          <div class="flex justify-between text-lg font-semibold">
+            <p>Tax (18%):</p>
+            <p>70.2</p>
+          </div>
+          <div class="flex justify-between text-xl font-bold mt-4">
+            <p>Total Amount:</p>
+            <p>460.2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 border-t pt-4">
+        <h3 class="text-lg font-semibold">Declaration:</h3>
+        <p class="text-gray-700">
+          We declare that this invoice shows the actual price of the goods
+          described and that all particulars are true and correct.
+        </p>
+      </div>
+
+      <div class="mt-6 flex justify-between">
+        <p class="text-gray-700">Customer's Seal and Signature</p>
+        <p class="text-gray-700 font-semibold">Authorised Signatory</p>
+      </div>
+    </div>
+  </body>
+</html>
