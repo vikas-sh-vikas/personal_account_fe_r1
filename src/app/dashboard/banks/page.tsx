@@ -142,11 +142,25 @@ const BankPage = () => {
       variants={containerVariants}
       className="space-y-8"
     >
-      <motion.div variants={itemVariants} className="text-center md:text-left">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent inline-block">
-          Bank & Cash Management
-        </h1>
-        <p className="text-muted-foreground text-sm mt-1">Manage your accounts and transfers</p>
+      <motion.div variants={itemVariants} className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent inline-block">
+            Bank & Cash Management
+          </h1>
+          <p className="text-muted-foreground text-sm mt-1">Manage your accounts and transfers</p>
+        </div>
+
+        <button
+          onClick={() => {
+            setIsFormOpen(true);
+            setFormType("BANKFORM");
+            setEditingIndex(null);
+            setTimeout(() => scrollToRef(bankFormRef as any), 0);
+          }}
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all shadow-lg bg-primary text-white shadow-primary/20 hover:scale-105 active:scale-95"
+        >
+          <Plus size={18} /> Add Bank
+        </button>
       </motion.div>
 
       {/* Totals Section */}
@@ -192,28 +206,7 @@ const BankPage = () => {
         </motion.div>
       </div>
 
-      {/* Action Buttons */}
-      <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {[
-          { label: "Add Bank", type: "BANKFORM", icon: Plus, color: "bg-primary shadow-primary/20", ref: bankFormRef },
-        ].map((btn) => (
-          <button
-            key={btn.type}
-            onClick={() => {
-              setIsFormOpen(true);
-              setFormType(btn.type);
-              setEditingIndex(null);
-              setTimeout(() => scrollToRef(btn.ref as any), 0);
-            }}
-            className={`flex flex-col items-center justify-center gap-3 p-4 rounded-3xl text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-xl ${btn.color}`}
-          >
-            <div className="p-2 bg-white/20 rounded-xl">
-              <btn.icon size={24} />
-            </div>
-            <span className="text-sm">{btn.label}</span>
-          </button>
-        ))}
-      </motion.div>
+
 
       {/* Forms Section */}
       {isFormOpen && (
